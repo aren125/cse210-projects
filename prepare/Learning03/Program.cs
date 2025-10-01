@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 class Program
 {
@@ -12,10 +13,31 @@ class Program
         Console.WriteLine($"{f2.GetTop()}/{f2.GetBottom()}");
         Console.WriteLine($"{f3.GetTop()}/{f3.GetBottom()}");
 
+        Console.WriteLine(); //spacing
+
+        Console.WriteLine(f1.GetFractionString());
+        Console.WriteLine(f1.GetDecimalValue());
+        Console.WriteLine(f2.GetFractionString());
+        Console.WriteLine(f2.GetDecimalValue());
+        Console.WriteLine(f3.GetFractionString());
+        Console.WriteLine(f3.GetDecimalValue());
+        
+
+        Console.WriteLine();//spacing
+
         f1.SetTop(3);
         Console.WriteLine($"{f1.GetTop()}/{f1.GetBottom()}");
 
         f1.SetBottom(4);
         Console.WriteLine($"{f1.GetTop()}/{f1.GetBottom()}");
+
+        Console.WriteLine(f1.GetFractionString());
+        Console.WriteLine(f1.GetDecimalValue());
+
+        Console.WriteLine(); //spacing
+
+
+
+
     }
 }

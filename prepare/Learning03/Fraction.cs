@@ -38,4 +38,19 @@ public class Fraction
     {
         _bottom = bottom;
     }
+
+
+    public string GetFractionString()
+    {
+        int top = _top;
+        int bottom = _bottom; //while comparing to the sample, lines 45 - 46 are unecessary if I call _top and _bottom directly in the string
+        string fractionString = $"{top}/{bottom}";
+        return fractionString;
+    }
+
+    public double GetDecimalValue() //I keep wanting to use float instead of double - USE DOUBLE
+    // also I use these assignment from prepares as notes, which is why I comment things like this. Hopefully this doesn't bother you :)
+    {
+        return (double)_top / (double)_bottom; //change to double for the decimal value, otherwise it will return int
+    }
 }
