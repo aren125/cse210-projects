@@ -1,9 +1,53 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 public class Scripture
 {
-    Reference _reference;
-    public List<Word> _words = new List<Word>();
-    
+    private Reference _reference;
+    private List<Word> _words = new List<Word>(); //each word will be an object
+
+    public Scripture(Reference reference, string text) // Constructor for Scripture
+    {
+        _reference = reference;
+        SplitTextIntoWords(text); //split the string into words
+    }
+
+    private void SplitTextIntoWords(string text) //Split the string so that each word is a string
+    {
+        string[] splitWords = text.Split(" "); //split by spaces
+        foreach (string word in splitWords)
+        {
+            _words.Add(new Word(word)); //add each word to _words list
+        }
+    }
+    public void Display() //displays both reference and scripture text
+    {
+        Console.WriteLine(_reference.DisplayReference());
+        foreach (Word word in _words)
+        {
+            Console.Write($"{word.DisplayText()} ");
+        }
+    }
+
+    public void HideRandomWords(int count) //randomly hide words
+    {
+        Random random = new Random();
+        for (int i = 0; i < count; i++)
+        {
+            int index = random.Next(_words.Count);
+            _words[index].HideWord(); //HideWord function will be called from the word class
+        }
+    }
+    public bool AllWordsHidden() //boolean to quit program if true
+    {
+        foreach (Word word in _words)
+        {
+            if (word.IsHidden() == false) //loop through each word, if any word is not hidden, return false
+            {
+                return false;
+            }
+        }
+        return true; // return true if all words are hidden to quit program
+    }
 }
