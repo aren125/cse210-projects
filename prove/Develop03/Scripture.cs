@@ -23,7 +23,7 @@ public class Scripture
     }
     public void Display() //displays both reference and scripture text
     {
-        Console.WriteLine(_reference.DisplayReference());
+        Console.WriteLine(_reference.GetReferenceText());
         foreach (Word word in _words)
         {
             Console.Write($"{word.DisplayText()} ");

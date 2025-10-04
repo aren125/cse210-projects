@@ -23,7 +23,7 @@ public class Reference
         _endVerse = endVerse;
     }
 
-    public string DisplayReference()
+    public string GetReferenceText()
     {
         if (_endVerse != 0)
         {
