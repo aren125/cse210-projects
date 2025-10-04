@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Scripture Mastery");
+        Console.WriteLine("Scripture Mastery Memorizer");
         Console.WriteLine("1. Old Testament");
         Console.WriteLine("2. New Testament");
         Console.WriteLine("3. Book of Mormon");
