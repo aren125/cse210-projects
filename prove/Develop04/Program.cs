@@ -1,9 +1,14 @@
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Reflection;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        Activity activity = new Activity("spinner Activity", "test", 30);
+        activity.ShowSpinner(20);
     }
+
 }
