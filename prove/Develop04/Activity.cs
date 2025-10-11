@@ -17,6 +17,11 @@ public class Activity
         _duration = duration;
     }
 
+    public int GetDuration()
+    {
+        return _duration;
+    }
+
     public void DisplayStartMessage()
     {
         Console.WriteLine($"Welcome to the {_name}");
@@ -62,15 +67,21 @@ public class Activity
         }
     }
 
-    public void ShowCountDown()
+    public void ShowCountDown(int seconds)
     {
-        Console.Write("placeholder");
+        for(int i = seconds; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+
+        }
     }
 
-    public void GetDurationFromUser()
+    public void DurationFromUser()
     {
         Console.Write("How long, in seconds, would you like for your session? ");
-        int duration = int.Parse(Console.ReadLine());
+        _duration = int.Parse(Console.ReadLine());        
     }
 
 

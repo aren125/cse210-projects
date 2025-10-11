@@ -8,7 +8,8 @@ class Program
     static void Main(string[] args)
     {
         Activity activity = new Activity("spinner Activity", "test", 30);
-        activity.ShowSpinner(20);
+        activity.ShowSpinner(10);
+        activity.ShowCountDown(5);
     }
 
 }
