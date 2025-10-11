@@ -25,12 +25,22 @@ public class Activity
     public void DisplayStartMessage()
     {
         Console.WriteLine($"Welcome to the {_name}");
+        Console.WriteLine();
         Console.WriteLine(_description);
+        Console.WriteLine();
+        GetDurationFromUser();
+        Console.WriteLine();
+        
     }
 
     public void DisplayEndMessage()
     {
-        Console.Write("placeholder");
+        Console.WriteLine("Well Done!");
+        ShowSpinner(5);
+        Console.WriteLine();
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
+        ShowSpinner(5);
+        Console.WriteLine();
     }
 
 
@@ -78,7 +88,7 @@ public class Activity
         }
     }
 
-    public void DurationFromUser()
+    public void GetDurationFromUser()
     {
         Console.Write("How long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());        
