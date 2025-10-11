@@ -10,11 +10,10 @@ public class Activity
     private string _description;
     private int _duration;
 
-    public Activity(string name, string description, int duration)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _duration = duration;
     }
 
     public int GetDuration()
@@ -28,9 +27,7 @@ public class Activity
         Console.WriteLine();
         Console.WriteLine(_description);
         Console.WriteLine();
-        GetDurationFromUser();
-        Console.WriteLine();
-        
+                
     }
 
     public void DisplayEndMessage()
@@ -77,9 +74,9 @@ public class Activity
         }
     }
 
-    public void ShowCountDown(int seconds)
+    public void ShowCountDown(int count)
     {
-        for(int i = seconds; i > 0; i--)
+        for(int i = count; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);

@@ -7,12 +7,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Activity activity = new Activity("spinner Activity", "test", 30);
+        Activity activity = new Activity("spinner Activity", "test");
         //activity.ShowSpinner(10);
         //activity.ShowCountDown(5);
 
-        activity.DisplayStartMessage();
-        activity.DisplayEndMessage();
+        //activity.DisplayStartMessage();
+        //activity.DisplayEndMessage();
+
+
+    
     }
 
 }
