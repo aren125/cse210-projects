@@ -23,21 +23,30 @@ public class Activity
 
     public void DisplayStartMessage()
     {
-        Console.WriteLine($"Welcome to the {_name}");
+        Console.WriteLine($"Welcome to the {_name}.");
         Console.WriteLine();
         Console.WriteLine(_description);
         Console.WriteLine();
-                
+
+        //moved GetDurationFrom and GEt Ready message from run functions to the start message to avoid repetition.
+
+        GetDurationFromUser(); 
+        Console.Clear();
+
+        Console.WriteLine("Get Ready..."); 
+        ShowSpinner(5);
     }
 
     public void DisplayEndMessage()
     {
+        Console.WriteLine();
         Console.WriteLine("Well Done!");
         ShowSpinner(5);
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
         ShowSpinner(5);
         Console.WriteLine();
+        Console.Clear();
     }
 
 
