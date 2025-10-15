@@ -1,16 +1,29 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
+        List<Shape> _shapes = new List<Shape>();
+
+
         Square s1 = new Square("blue", 5);
-        Console.WriteLine($"{s1.GetColor()}, {s1.GetArea()}");
+        _shapes.Add(s1);
 
         Rectangle r1 = new Rectangle("red", 4, 5);
-        Console.WriteLine($"\n{r1.GetColor()}, {r1.GetArea()}");
+        _shapes.Add(r1);
 
         Circle c1 = new Circle("yellow", 6);
-        Console.WriteLine($"\n{c1.GetColor()}, {c1.GetArea().ToString("F2")}");
+        _shapes.Add(c1);
+
+        foreach (Shape s in _shapes)
+        {
+            string color = s.GetColor();
+            double area = s.GetArea();
+
+            Console.WriteLine($"The {color} shape has an area of {area.ToString("F2")}.");
+
+        }
     }
 }
