@@ -19,10 +19,8 @@ class Program
 
         foreach (Shape s in _shapes)
         {
-            string color = s.GetColor();
-            double area = s.GetArea();
-
-            Console.WriteLine($"The {color} shape has an area of {area.ToString("F2")}.");
+    
+            Console.WriteLine($"The {s.GetColor()} shape has an area of {s.GetArea().ToString("F2")}.");
 
         }
     }
