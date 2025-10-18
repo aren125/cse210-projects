@@ -12,7 +12,7 @@ public abstract class Goal
         _points = points;
     }
 
-    public string GetName() // breaking up get info from design into 3 separate getters instead
+    public string GetName() // breaking up get info from design into 3 separate getters instead to help with GetStringRepresentation
     {
         return _name;
     }
@@ -27,7 +27,7 @@ public abstract class Goal
 
     public abstract void RecordEvent();
     public abstract string GetStringRepresentation();
-    public abstract string IsComplete();
+    public abstract string GetStatus(); //clearer method name since I already have the bool _isComplete 
 
     
 }
