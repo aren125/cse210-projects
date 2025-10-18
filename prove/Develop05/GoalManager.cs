@@ -16,7 +16,8 @@ public class GoalManager
     {
         for (int i = 0; i <_goals.Count; i++)
         {
-            Console.WriteLine($"{i+1}. {_goals[i].GetStatus()} {_goals[i].GetName()} - {_goals[i].GetDescription()}");
+            Console.WriteLine($"{i + 1}. {_goals[i].GetDisplayString()}"); // differenct display for check list ex: 0/3
+    
         }
 
     }
@@ -56,10 +57,13 @@ public class GoalManager
             else
             {
                 Goal g = CreateGoalFromString(line);
-                _goals.Add(g);
+                if (g != null)
+                {
+                    _goals.Add(g);
+                }
             }
-            Console.WriteLine("Your goals have been loaded.");
         }
+        Console.WriteLine("Your goals have been loaded.");
 
     }
     public void DisplayScore()
@@ -70,16 +74,16 @@ public class GoalManager
     public static Goal CreateGoalFromString(string line)
     {
         string[] parts = line.Split(':');
+        if(parts.Length < 2)
+        {
+            return null; // will edit this out in LoadGoals 
+        }
         string type = parts[0];
         string[] details = parts[1].Split(',');
-        if (type == "SimpleGoal")
+
+         if (type == "SimpleGoal")
         {
-            SimpleGoal sg = new SimpleGoal(details[0], details[1], int.Parse(details[2]));
-            if (bool.Parse(details[3]))
-            {
-                sg.RecordEvent(); // if the bool is true- if the goal has been completed, check the box
-            }
-            return sg;
+            return new SimpleGoal(details[0], details[1], int.Parse(details[2]), bool.Parse(details[3]));
         }
         else if (type == "EternalGoal")
         {
@@ -87,17 +91,25 @@ public class GoalManager
         }
         else if (type == "ChecklistGoal")
         {
-            ChecklistGoal cg = new ChecklistGoal(details[0], details[1], int.Parse(details[2]), int.Parse(details[4]), int.Parse(details[5]));
-            for (int i = 0; i < int.Parse(details[3]); i++)
-            {
-                cg.RecordEvent();
-            }
-            return cg;
+            return new ChecklistGoal(details[0], details[1], int.Parse(details[2]), int.Parse(details[3]), int.Parse(details[4]), int.Parse(details[5]));
         }
         else
         {
-            throw new Exception("Unknown goal type");
+            return null; // again, remove in LoadGoals
         }
-        
+
+    }
+
+    public int GetGoalCount()
+    {
+        return _goals.Count; //for the if statement in option 5 of Program.cs
+    }
+    
+    public void DeleteGoal(int index) //for exceeding requirements
+    {
+        if (index >= 0 && index < _goals.Count)
+        {
+            _goals.RemoveAt(index);
+        }
     }
 }

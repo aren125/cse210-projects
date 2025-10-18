@@ -1,0 +1,5 @@
+SimpleGoal:Give a Talk,Give a talk when asked,100,True
+EternalGoal:Scripture Study,Study the Scriptures for at least 10 minutes, 50
+ChecklistGoal:Attend the Temple,perform any temple ordinance,50,3,3,500
+ChecklistGoal:test goal,this is a test,30,1,4,400
+Score:380

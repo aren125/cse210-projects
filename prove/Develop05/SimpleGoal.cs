@@ -9,6 +9,16 @@ public class SimpleGoal : Goal
         _isComplete = false;
     }
 
+    public SimpleGoal(string name, string description, int points, bool isComplete) : base(name, description, points)
+    {
+        _isComplete = isComplete; // constructor for loading
+    }
+
+    public override string GetDisplayString()
+    {
+        return $"{GetStatus()} {GetName()} - {GetDescription()}";
+    }
+
     public override void RecordEvent()
     {
         if (_isComplete == false)

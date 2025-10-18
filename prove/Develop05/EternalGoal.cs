@@ -5,6 +5,11 @@ public class EternalGoal : Goal
     public EternalGoal(string name, string description, int points) : base(name, description, points)
     { }
 
+    public override string GetDisplayString()
+    {
+        return $"{GetStatus()} {GetName()} - {GetDescription()}";
+    }
+
     public override void RecordEvent()
     {
         Console.WriteLine($"Congratulations, you have earned {GetPoints()} points!"); //math/score done in goal manager

@@ -25,6 +25,7 @@ public abstract class Goal
         return _points;
     }
 
+    public abstract string GetDisplayString();
     public abstract void RecordEvent();
     public abstract string GetStringRepresentation();
     public abstract string GetStatus(); //clearer method name since I already have the bool _isComplete 

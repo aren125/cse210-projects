@@ -17,6 +17,18 @@ public class ChecklistGoal : Goal
         _bonusPoints = bonusPoints;
 
     }
+    public ChecklistGoal(string name, string description, int points, int completedCount, int targetCount, int bonusPoints)
+        : base(name, description, points) // constructor for loading files
+    {
+        _completedCount = completedCount;
+        _targetCount = targetCount;
+        _bonusPoints = bonusPoints;
+    }
+
+    public override string GetDisplayString()
+    {
+        return $"{GetStatus()} {GetName()} - {GetDescription()} - Completed: {_completedCount}/{_targetCount}";
+    }
 
     public override void RecordEvent()
     {
@@ -50,7 +62,7 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"CheclistGOal:{GetName()},{GetDescription()},{GetPoints()},{_completedCount},{_targetCount},{_bonusPoints}";
+        return $"ChecklistGoal:{GetName()},{GetDescription()},{GetPoints()},{_completedCount},{_targetCount},{_bonusPoints}";
     }
 
 }
