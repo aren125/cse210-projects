@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation1 World!");
+        Video v1 = new Video("Funny Cat Videos", "catluver03", 300);
+        v1.AddComment(new Comment("Audrey", "OMG the third cat looks just like mine!"));
     }
 }

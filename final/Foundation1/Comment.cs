@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 public class Comment
 {
@@ -13,8 +11,8 @@ public class Comment
         _comment = comment;
     }
 
-    public void DisplayComment()
+    public string GetComment()
     {
-        Console.WriteLine($"{_commenterName}: {_comment}");
+        return $"{_commenterName}: {_comment}"; //changed to return a string - not void
     }
 }
