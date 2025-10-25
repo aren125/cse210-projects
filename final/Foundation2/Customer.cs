@@ -11,7 +11,7 @@ public class Customer
         _address = address;
     }
 
-    public string GetName()
+    public string GetCustomerName() //renamed for clarity (previously GetName)
     {
         return _name;
     }
