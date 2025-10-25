@@ -20,7 +20,7 @@ public class Address
         return _country == "USA" || _country == "United States";
     }
 
-    public string GetAddress()
+    public string GetFullAddress()
     {
         return $"{_street}\n{_city}, {_stateOrProvidence}\n{_country}";
     }
