@@ -29,4 +29,9 @@ public class Product
     {
         return _productId;
     }
+
+    public int GetQuantity() // I'm going to add the quantity of products to the packing label (as someone who has worked in shipping - its super important for a packing label lol)
+    {
+        return _quantity;
+    }
 }
