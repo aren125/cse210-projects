@@ -4,24 +4,34 @@ class Program
 {
     static void Main(string[] args)
     {
-        Address l1a = new Address("123 Test Street", "Garner", "NC", "USA");
-        Lecture l1 = new Lecture("title", "test", "April 1, 2030", "3:00", l1a, "speaker name", 45);
+        Address la = new Address("123 Psych Street", "Raleigh", "NC", "USA");
+        Lecture l = new Lecture("Is Pluto a Planet?", "A lecture on what makes a planet a planet. Have you heard about Pluto? That's messed up, right?", "January 4th, 2026", "6:00 pm", la, "Bruton Gaster", 45);
 
-        Console.WriteLine(l1.GetStandardDetails());
+        Console.WriteLine(l.GetStandardDetails());
         Console.WriteLine();
-        Console.WriteLine(l1.GetFullDetails());
+        Console.WriteLine(l.GetFullDetails());
         Console.WriteLine();
-        Console.WriteLine(l1.GetShortDescription());
+        Console.WriteLine(l.GetShortDescription());
         Console.WriteLine();
 
-        Address r1a = new Address("456 Test Street", "Raleigh", "NC", "USA");
-        Reception r1 = new Reception("title2", "test2", "April 2, 2030", "4:00", r1a, "email@exmple.com");
+        Address ra = new Address("214 Oak Tree Lane", "Stars Hollow", "CT", "USA");
+        Reception r = new Reception("Emily and Richard's 45th Anniversary", "Celebrating the love of Emily and Richard Gilmore on their 45th wedding anniversary.", "April 25th, 2030", "4:00", ra, "emilygilmore@rsvp.com");
 
-        Console.WriteLine(r1.GetStandardDetails());
+        Console.WriteLine(r.GetStandardDetails());
         Console.WriteLine();
-        Console.WriteLine(r1.GetFullDetails());
+        Console.WriteLine(r.GetFullDetails());
         Console.WriteLine();
-        Console.WriteLine(r1.GetShortDescription());
+        Console.WriteLine(r.GetShortDescription());
+        Console.WriteLine();
+
+        Address oa = new Address("456 Steve Dr.", "Swallow Falls", "ID", "USA");
+        OutdoorGathering o = new OutdoorGathering("Flint's Birthday Party", "Celebrating Flint's 25th Birthday", "February 3rd, 2026", "1:00 pm", oa, "Cloudy with a Chance of Meat Balls");
+
+        Console.WriteLine(o.GetStandardDetails());
+        Console.WriteLine();
+        Console.WriteLine(o.GetFullDetails());
+        Console.WriteLine();
+        Console.WriteLine(o.GetShortDescription());
         Console.WriteLine();
     }
 }
