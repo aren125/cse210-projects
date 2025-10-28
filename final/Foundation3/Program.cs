@@ -13,5 +13,15 @@ class Program
         Console.WriteLine();
         Console.WriteLine(l1.GetShortDescription());
         Console.WriteLine();
+
+        Address r1a = new Address("456 Test Street", "Raleigh", "NC", "USA");
+        Reception r1 = new Reception("title2", "test2", "April 2, 2030", "4:00", r1a, "email@exmple.com");
+
+        Console.WriteLine(r1.GetStandardDetails());
+        Console.WriteLine();
+        Console.WriteLine(r1.GetFullDetails());
+        Console.WriteLine();
+        Console.WriteLine(r1.GetShortDescription());
+        Console.WriteLine();
     }
 }
