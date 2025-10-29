@@ -22,7 +22,7 @@ public abstract class Activity
     public abstract string GetPace(); //changing to strings 
     public string GetSummary()
     {
-        return $"{_date:dd MMM yyy} {GetType().Name} ({_length} min) - Distance: {GetDistance()}, Speed: {GetSpeed()}, Pace: {GetPace()}"; //GetType().Name is returning the name of the class
+        return $"{_date:dd MMM yyyy} {GetType().Name} ({_length} min) - Distance: {GetDistance()}, Speed: {GetSpeed()}, Pace: {GetPace()}"; //GetType().Name is returning the name of the class
     }
 
 }
