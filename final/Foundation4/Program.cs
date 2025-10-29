@@ -12,5 +12,9 @@ class Program
 
         Console.WriteLine(c.GetSummary());
 
+        Swimming s = new Swimming(new DateTime(2026, 10, 25), 12, 10);
+
+        Console.WriteLine(s.GetSummary());
+
     }
 }
