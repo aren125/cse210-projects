@@ -12,11 +12,6 @@ public abstract class Activity
         _length = length;
     }
 
-    public DateTime GetDate()
-    {
-        return _date;
-    }
-
     public int GetLength()
     {
         return _length;
@@ -27,7 +22,7 @@ public abstract class Activity
     public abstract string GetPace(); //changing to strings 
     public string GetSummary()
     {
-        return $"{_date:dd MMM yyy} {GetType().Name} ({_length}) - Distance: {GetDistance()}, Speed: {GetSpeed()}, Pace: {GetPace()}"; //GetType().Name is returning the name of the class
+        return $"{_date:dd MMM yyy} {GetType().Name} ({_length} min) - Distance: {GetDistance()}, Speed: {GetSpeed()}, Pace: {GetPace()}"; //GetType().Name is returning the name of the class
     }
 
 }

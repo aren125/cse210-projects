@@ -8,5 +8,9 @@ class Program
 
         Console.WriteLine(r.GetSummary());
 
+        Cycling c = new Cycling(new DateTime(2026, 10, 24), 45, 20.0);
+
+        Console.WriteLine(c.GetSummary());
+
     }
 }
