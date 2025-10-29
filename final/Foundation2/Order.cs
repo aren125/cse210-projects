@@ -4,17 +4,13 @@ using System.Runtime.CompilerServices;
 
 public class Order
 {
-    private List<Product> _products = new List<Product>();
+    private List<Product> _products;
     private Customer _customer;
 
-    public Order(Customer customer)
+    public Order(Customer customer, List<Product> products)
     {
         _customer = customer;
-    }
-
-    public void AddProduct(Product product)
-    {
-        _products.Add(product);
+        _products = products;
     }
 
     public double GetTotalPrice()
