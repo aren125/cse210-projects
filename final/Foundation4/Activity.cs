@@ -22,9 +22,12 @@ public abstract class Activity
         return _length;
     }
 
-    public abstract double GetDistance();
-    public abstract double GetSpeed();
-    public abstract double GetSpace();
-    public abstract string GetSummary(); //for now - might not override this method
+    public abstract string GetDistance(); //changing to strings
+    public abstract string GetSpeed(); //changing to strings 
+    public abstract string GetPace(); //changing to strings 
+    public string GetSummary()
+    {
+        return $"{_date:dd MMM yyy} {GetType().Name} ({_length}) - Distance: {GetDistance()}, Speed: {GetSpeed()}, Pace: {GetPace()}"; //GetType().Name is returning the name of the class
+    }
 
 }
